@@ -1,0 +1,22 @@
+.meme-selector-modal {
+  display: flex;
+}
+
+.meme-image {
+  width: 20rem;
+}
+
+.meme-image:hover {
+  cursor: pointer;
+}
+
+.meme-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.meme-header {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,33 @@
+.App-logo {
+  height: 40vmin;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.input-fields {
+  margin: 20px 0 50px;
+  display: flex;
+}
+
+.input-text {
+  flex: 1;
+  resize: none;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: left;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  padding: 0 10%;
+}
