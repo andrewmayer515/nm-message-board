@@ -19,7 +19,7 @@ const postComments = async (req, res) => {
   res.status(200);
 };
 
-router.get('/comments', getComments);
-router.post('/comments', postComments);
+router.get('/api/comments', getComments);
+router.post('/api/comments', postComments);
 
 export default router;

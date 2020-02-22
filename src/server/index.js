@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
 import comments from './routes/comments';
 import jwt from './routes/jwt';
@@ -20,6 +21,8 @@ const client = new MongoClient(process.env.mongodbUrl, {
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../dist')));
 }
+
+app.use(bodyParser.json());
 
 // Routes
 app

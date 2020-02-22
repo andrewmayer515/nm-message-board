@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import './index.scss';
 import MessageContainer from '../message-container';
 import Login from '../login';
-import { urlPrefix, tokenKey } from '../../constants';
+import { tokenKey } from '../../constants';
 
 const App = () => {
   const [validated, setValidated] = useState(false);
@@ -17,7 +17,7 @@ const App = () => {
 
   const validateToken = async () => {
     const token = Cookies.get(tokenKey);
-    const response = await fetch(`${urlPrefix}/verifyToken`, {
+    const response = await fetch('/api/verifyToken', {
       method: 'POST',
       body: JSON.stringify({
         token,

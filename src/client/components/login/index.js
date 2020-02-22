@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
 import './index.scss';
-import { urlPrefix, tokenKey } from '../../constants';
+import { tokenKey } from '../../constants';
 
 const Login = props => {
   const inputRef = useRef(null);
 
   const login = async () => {
-    const response = await fetch(`${urlPrefix}/createToken`, {
+    const response = await fetch('/api/createToken', {
       method: 'POST',
       body: JSON.stringify({
         username: inputRef.current.value,

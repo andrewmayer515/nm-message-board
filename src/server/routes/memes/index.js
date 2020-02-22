@@ -30,7 +30,7 @@ const getRandomMeme = async (req, res) => {
   res.send([body.data.images.original.url.split('?')[0]]);
 };
 
-router.get('/dankmemes', getDankMemes);
-router.get('/randomMeme', getRandomMeme);
+router.get('/api/dankmemes', getDankMemes);
+router.get('/api/randomMeme', getRandomMeme);
 
 export default router;

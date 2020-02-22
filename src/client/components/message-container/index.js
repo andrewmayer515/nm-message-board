@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import './index.scss';
 import Comment from '../comment';
 import MemeSelectorModal from '../meme-selector-modal';
-import { urlPrefix } from '../../constants';
 
 const MessageContainer = props => {
   const [data, setData] = useState([]);
   const inputRef = useRef(null);
 
   const getComments = async () => {
-    const response = await fetch(`${urlPrefix}/comments`, { method: 'GET' });
+    const response = await fetch('/api/comments', { method: 'GET' });
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -21,7 +20,7 @@ const MessageContainer = props => {
   };
 
   const postComment = async text => {
-    await fetch(`${urlPrefix}/comments`, {
+    await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({
         text,

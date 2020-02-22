@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import './index.scss';
-import { urlPrefix } from '../../constants';
 
 const MemeSelectorModal = props => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +14,7 @@ const MemeSelectorModal = props => {
   };
 
   const searchMeme = async () => {
-    const response = await fetch(`${urlPrefix}/dankmemes?q=${searchRef.current.value}&limit=10`);
+    const response = await fetch(`/api/dankmemes?q=${searchRef.current.value}&limit=10`);
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -26,7 +25,7 @@ const MemeSelectorModal = props => {
   };
 
   const searchRandomMeme = async () => {
-    const response = await fetch(`${urlPrefix}/randomMeme?q=${searchRef.current.value}`);
+    const response = await fetch(`/api/randomMeme?q=${searchRef.current.value}`);
     const body = await response.json();
 
     if (response.status !== 200) {

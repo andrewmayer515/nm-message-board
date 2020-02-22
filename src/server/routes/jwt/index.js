@@ -30,7 +30,7 @@ const postVerifyToken = async (req, res) => {
   }
 };
 
-router.post('/createToken', postCreateToken);
-router.post('/verifyToken', postVerifyToken);
+router.post('/api/createToken', postCreateToken);
+router.post('/api/verifyToken', postVerifyToken);
 
 export default router;
