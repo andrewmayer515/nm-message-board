@@ -16,7 +16,7 @@ const postComments = async (req, res) => {
   const collection = db.collection('messages');
   await collection.insertOne({ text: body.text, username: body.username });
 
-  res.status(200);
+  res.send({});
 };
 
 router.get('/api/comments', getComments);
